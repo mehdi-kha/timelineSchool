@@ -1,0 +1,20 @@
+<script>
+function ajout_periode(){
+	var sp1 = document.createElement("div");
+	var sp2 = document.getElementById("submit");
+
+	var parentDiv = sp2.parentNode;
+	parentDiv.insertBefore(sp1, sp2);
+
+	sp1.innerHTML = "<input type=\"text\" name=\"periode[]\"required><input type=\"time\" name=\"debut[]\"required><input type=\"time\" name=\"fin[]\"required>";
+}
+</script>
+
+<form action="/Creation_evenements/formulaire.php" method="POST">
+  Evenement:<br>
+  <input type="text" name="evenement" required><br>
+  Date:<br>
+  <input type="date" name="date" required><br><br>
+  Ajout periode :<input type="button" value="ajouter un champ" onclick="ajout_periode()"/><br><br>
+  <input id="submit" type="submit">
+</form>
